@@ -4,12 +4,14 @@ import java.util.Stack;
 
 public class InsertAtAnyIdx {
     public static void displayRec(Stack<Integer> st){
-        if(st.size()==0) return;
-        System.out.print(st.pop()+" ");
+        if(st.size()==0) return; // Base case
+        int x = st.pop();
         displayRec(st);
+        System.out.print(x+" ");
+        st.push(x);
     }
     public static void main(String[] args) {
-        int idx = 3, ele = 99;
+        int idx = 3;
         Stack<Integer> st = new Stack<>();
         st.push(1);
         st.push(2);
